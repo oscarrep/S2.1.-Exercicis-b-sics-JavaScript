@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 1.1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container" id="PROGRAM">
+        <h1>Arrow Functions</h1>
+        <p><b>EX 1</b>:</p>
+        <p>numero 1 <br><input type="number" id="A"></p>
+        <p>numero 2 <br><input type="number" id="B"></p>
+
+        <p><b>EX 2</b>: <br>Random num 0-100</p>
+
+        <p><b>EX 3</b>:</p>
+        <p>Nom de persona <br><input type="text" id="NAME"></p>
+
+        <p>
+            <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
+        </p>
+        <p id="TEXT"></p>
+    </div>
+
+    <script src="./Person.js"></script>
+    <script>
+
+        const Add = (a, b) => { //EX 1
+            return a + b;
+        }
+
+        const randomNum = () => { //EX 2
+            let array = Array.from(Array(101).keys());
+            let numRandom = Math.floor(Math.random() * array.length);
+            return numRandom;
+        }
+
+        const personArray = []; //EX 3
+        const createPerson = () => {
+            let name = document.getElementById('NAME').value;
+            let persona = new Person(name);
+            personArray.push(persona);
+        }
+
+        const shortArray = [0, 1, 2, 3, 4, 5]; //EX 4
+        function printNumbers(array) {
+            for (let i = 0; i < array.length; i++) {
+                (() => (console.log(array[i])))();
+            }
+        }
+
+
+        let timeout = 0;
+        const waitTime = () => { timeout = setTimeout(sendMessage, 3000) } //EX 5
+        const sendMessage = () => {
+            return console.log('you have waited 3s');
+        }
+
+        function main() {
+            console.clear();
+            let a = Number(document.getElementById('A').value);
+            let b = Number(document.getElementById('B').value);
+
+            let index = personArray.length;
+
+            createPerson();
+
+            document.getElementById('TEXT').innerHTML = `
+            <b>--- LVL1 ---</b> <br>
+            Ex1: ${Add(a, b)} <br> 
+            Ex2 Random Num: ${randomNum()} <br>
+            Ex3: ${personArray[index].salute()} <br>
+            <b>--- LVL2 ---</b> <br>
+            Ex4: See in console <br>
+            <b>--- LVL3 ---</b> <br>
+            Ex5: See in console<br>`;
+            printNumbers(shortArray);
+            waitTime();
+
+        }
+
+
+    </script>
+</body>
+
+</html>

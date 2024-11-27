@@ -1,0 +1,49 @@
+    body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container {
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background-color: rgb(219, 240, 250);
+        text-align: center;
+        padding: 2%;
+        width: 350px;
+    }
+
+    .mDiv {
+        text-align: justify;
+        transform: translate(5%, 0%);
+    }
+
+    .mPar {
+        text-align: center;
+        transform: translate(-5%, 0%);
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    .red {
+        color: tomato;
+    }
+
+    h1 {
+        color: blueviolet;
+        text-align: center;
+    }
+    h4 {
+        color: blue;
+        text-align: center;
+    }
+
+    .mInput {
+        width: 50%;
+    }
+
+    .mButton {
+        width: 45%;
+    }

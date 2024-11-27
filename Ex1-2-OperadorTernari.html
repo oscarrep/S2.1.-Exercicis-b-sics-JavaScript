@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 1.2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container" id="PROGRAM">
+        <h1>Ternaris</h1>
+        <h4><b>EX 1</b>:</h4>
+        <p>edat: <br><input type="number" id="age"></p>
+
+        <h4><b>EX 2</b>:</h4>
+        <p>num 1: <br><input type="number" id="NUM1"></p>
+        <p>num 2: <br><input type="number" id="NUM2"></p>
+
+        <h4><b>EX 3.1</b>:</h4>
+        <p>number: <br><input type="number" id="NUM"></p>
+        <h4><b>EX 3.2</b>:</h4>
+        <p>num a: <br><input type="number" id="A"></p>
+        <p>num b: <br><input type="number" id="B"></p>
+        <p>num c: <br><input type="number" id="C"></p>
+
+        <p>
+            <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
+        </p>
+        <p id="TEXT"></p>
+    </div>
+
+    <script>
+
+        // EX1 
+        const potConduir = (edat) => { return edat >= 18 ? 'Pots conduir' : 'No pots conduir'; }
+
+        // EX2 
+        const compare = (num1, num2) => { return (num1 > num2) ? `${num1} és més gran` : `${num2} és més gran`; }
+
+        // EX3
+        const negPosZero = (num) => {
+            return num == 0 ? `${num} és 0` : num < 0 ? `${num} és negatiu` : `${num} és positiu`;
+        }
+        const trobarMaxim = (a, b, c) => {
+            return ((a > b) && (a > c)) ? `el valor màxim és ${a}` :
+                ((b > a) && (b > c)) ? `el valor màxim és ${b}` :
+                    ((c > a) && (c > b)) ? `el valor màxim és ${c}` : `hi ha dos o més valors iguals`;
+        }
+
+        // EX4
+        const shortArray = [0, 1, 2, 3, 4, 5];
+        const parImpar = (array) => {
+            console.log('EX4');
+            for (let i = 0; i < array.length; i++) {
+                (array[i] % 2 == 0) ? console.log(array[i] + ' = par') : console.log(array[i] + ' = impar');
+            }
+        }
+
+        function main() {
+
+            let edat = parseInt(document.getElementById('age').value);
+
+            let num1 = Number(document.getElementById('NUM1').value);
+            let num2 = Number(document.getElementById('NUM2').value);
+
+            let num = Number(document.getElementById('NUM').value);
+
+            let a = Number(document.getElementById('A').value);
+            let b = Number(document.getElementById('B').value);
+            let c = Number(document.getElementById('C').value);
+
+            document.getElementById('TEXT').innerHTML = `
+            <b> ---- LVL1 ----</b> <br>
+            EX1: ${potConduir(edat)} <br>
+            EX2: ${compare(num1, num2)} <br>
+            <b> ---- LVL2 ----</b> <br>
+            EX3.1: ${negPosZero(num)} <br>
+            EX3.2: ${trobarMaxim(a, b, c)} <br>
+            <b> ---- LVL3 ----</b> <br>
+            EX4: see console <br>
+            `;
+            parImpar(shortArray);
+        }
+
+    </script>
+</body>
+
+</html>
