@@ -11,24 +11,7 @@
         text-align: center;
         padding: 2%;
         width: 350px;
-    }
-
-    .mDiv {
-        text-align: justify;
-        transform: translate(5%, 0%);
-    }
-
-    .mPar {
-        text-align: center;
-        transform: translate(-5%, 0%);
-    }
-
-    .blue {
-        color: blue;
-    }
-
-    .red {
-        color: tomato;
+        border: solid 5px blue;
     }
 
     h1 {

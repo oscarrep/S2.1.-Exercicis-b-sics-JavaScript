@@ -46,19 +46,16 @@
             personArray.push(persona);
         }
 
-        const shortArray = [0, 1, 2, 3, 4, 5]; //EX 4
+        let shortArray = [0, 1, 2, 3, 4, 5]; //EX 4
         function printNumbers(array) {
             for (let i = 0; i < array.length; i++) {
                 (() => (console.log(array[i])))();
             }
         }
 
-
         let timeout = 0;
         const waitTime = () => { timeout = setTimeout(sendMessage, 3000) } //EX 5
-        const sendMessage = () => {
-            return console.log('you have waited 3s');
-        }
+        const sendMessage = () => { return console.log('you have waited 3s'); }
 
         function main() {
             console.clear();

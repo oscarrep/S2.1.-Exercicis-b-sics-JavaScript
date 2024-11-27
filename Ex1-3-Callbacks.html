@@ -12,15 +12,19 @@
     <div class="container" id="PROGRAM">
         <h1>Callbacks</h1>
         <h4><b>EX 1</b>:</h4>
-       
+        <p>num: <br><input type="number" id="NUM"></p>
+
         <h4><b>EX 2</b>:</h4>
+        <p>num1: <br><input type="number" id="NUM1"></p>
+        <p>num2: <br><input type="number" id="NUM2"></p>
 
         <h4><b>EX 3</b>:</h4>
-
-        <h4><b>EX 4</b>:</h4>
-
+        <p>nom: <br><input type="text" id="NOM"></p>
+        
+        <h4><b>EX 4</b>:</h4> See console
+        
         <h4><b>EX 5</b>:</h4>
-
+        <p>string: <br><input type="text" id="STRING"></p>
 
         <p>
             <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
@@ -30,18 +34,57 @@
 
     <script>
 
+        // EX 1
+        const processar = (num, callback) => { return callback(num); }
+        const mostrarNum = (n) => { return 'num invocat => ' + n; }
+
+        // EX 2
+        const calculadora = (a, b, callback) => { return callback(a, b); }
+        const suma = (n1, n2) => { return n1 + n2; }
+
+        // EX 3
+        let timeout = 0;
+        const espararSaludar = (nom, callback) => { return timeout = setTimeout(() => callback(nom), 2000); }
+        const saludar = (n) => { return console.log('hola, ' + n); }
+
+        // EX 4
+        let shortArray = [0, 1, 2, 3, 4, 5];
+        const processarElements = (array, callback) => {
+            for (let i = 0; i < array.length; i++) {
+                callback(array, i);
+            }
+        }
+        const mostrarArray = (arr, n) => { console.log(arr[n]); }
+
+        // EX 5
+        const processarCadena = (string, callback) => {
+            string = string.toUpperCase();
+            return callback(string);
+        }
+        const mostrarCadena = (str) => { return str; }
+
         function main() {
+            let num = Number(document.getElementById('NUM').value);
+
+            let num1 = Number(document.getElementById('NUM1').value);
+            let num2 = Number(document.getElementById('NUM2').value);
+
+            let nom = document.getElementById('NOM').value;
+            
+            let string = document.getElementById('STRING').value;
 
             document.getElementById('TEXT').innerHTML = `
             <b> ---- LVL1 ----</b> <br>
-            EX1:  <br>
-            EX2:  <br>
+            EX1: ${processar(num, mostrarNum)} <br>
+            EX2: ${calculadora(num1, num2, suma)} <br>
             <b> ---- LVL2 ----</b> <br>
-            EX3:  <br>
-            EX4:  <br>
+            EX3: see console <br>
+            EX4: see console <br>
             <b> ---- LVL3 ----</b> <br>
-            EX5:  <br>
+            EX5: ${processarCadena(string, mostrarCadena)} <br>
             `;
+            espararSaludar(nom, saludar);
+            processarElements(shortArray, mostrarArray);
         }
 
     </script>
