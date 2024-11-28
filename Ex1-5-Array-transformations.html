@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 1.5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container" id="PROGRAM">
+        <h1>Array transformations</h1>
+        <h4><b> ---- LVL1 ----<br>EX 1</b>:</h4> Map
+        <p id="EX1"></p>
+
+        <h4><b>EX 2</b>:</h4> Filter
+        <p id="EX2"></p>
+
+        <h4><b>EX 3</b>:</h4> Find
+        <p id="EX3"></p>
+
+        <h4><b>EX 4</b>:</h4> Reduce
+        <p id="EX4"></p>
+
+        <h4><b>---- LVL2 ---- <br>EX 5</b>:</h4> Filter, multiply, add
+        <p id="EX5"></p>
+
+        <h4><b>---- LVL3 ---- <br>EX 6</b>:</h4> Every / Some
+        <p id="EX6"></p>
+
+        <p>
+            <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
+        </p>
+
+    </div>
+
+    <script>
+
+        const numArray = [1, 2, 3, 4];
+        let powArray = [];
+
+        // EX 1
+        const square = (arr) => {
+            for (let i = 0; i < arr.length; i++) {
+                powArray = arr.map(squareCalc);
+            }
+            return powArray;
+        }
+        const squareCalc = (n) => {
+            return Math.pow(n, 2);
+        }
+
+
+        // EX 2
+        const evenNums = (arr) => { return arr.filter(n => n % 2 == 0); }
+
+        // EX 3
+        const numArray2 = [1, 10, 8, 11];
+        const firstHigherThan = (arr) => { return arr.find(n => n > 10); }
+
+        // EX 4
+        const numArray3 = [13, 7, 8, 21];
+        const total = (arr) => { return arr.reduce((sum, n) => sum + n, 0); }
+
+        // EX 5
+        const numArray4 = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9];
+        const resultSum = (arr) => {
+            return arr.filter(n => n >= 10).map(n => n * 2).reduce((sum, n) => sum + n, 0);
+        }
+
+        // EX 6
+        const numArray5 = [11, 12, 13, 14];
+        const everyHigherThan = (arr) => { return arr.every(n => n > 10); }
+        const someHigherThan = (arr) => { return arr.some(n => n > 10); }
+
+
+        function main() {
+            document.getElementById('EX1').innerHTML = `${square(numArray)} <br>`;
+            document.getElementById('EX2').innerHTML = `${evenNums(numArray)} <br>`;
+            document.getElementById('EX3').innerHTML = `${firstHigherThan(numArray2)} <br>`;
+            document.getElementById('EX4').innerHTML = `${total(numArray3)} <br>`;
+            document.getElementById('EX5').innerHTML = `${resultSum(numArray4)} <br>`;
+            document.getElementById('EX6').innerHTML = `Every: ${everyHigherThan(numArray5)} <br> Some: ${someHigherThan(numArray5)}`;
+        }
+
+    </script>
+</body>
+
+</html>
