@@ -12,23 +12,20 @@
     <div class="container" id="PROGRAM">
         <h1>Rest & Spread</h1>
         <h4><b>EX 1</b>:</h4>
-        Array spread
+        Operador Spread en Arrays
 
-        <h4><b>EX 2</b>:</h4>
+        <h4><b>EX 2</b>:</h4> Operador Rest en Funcions
         <p>num1: <input type="number" id="NUM1"></p>
         <p>num2: <input type="number" id="NUM2"></p>
         <p>num3: <input type="number" id="NUM3"></p>
 
-        <h4><b>EX 3</b>:</h4>
-        nom: <br><input type="text" id="NOM">
+        <h4><b>EX 3</b>:</h4> Copiant objectes amb Spread
 
-        <h4><b>EX 4</b>:</h4> See console
+        <h4><b>EX 4</b>:</h4> Rest en Destructuring
 
-        <h4><b>EX 5</b>:</h4>
-        string: <br><input type="text" id="STRING">
+        <h4><b>EX 5</b>:</h4> Spread en Funcions
 
-        <h4><b>EX 6</b>:</h4>
-        string: <br><input type="text" id="STRING">
+        <h4><b>EX 6</b>:</h4> Fusionant Objectes amb Spread:
 
         <p>
             <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
@@ -50,21 +47,58 @@
             return suma;
         }
 
+        // EX 3
+        const obj1 = { name: 'Plastic Taste', artist: 'Joji', year: 2018 }
+
+        const copyObj = (obj) => {
+            let obj2 = { ...obj }
+
+            obj2.name = 'Pills';
+            return `<br>
+            obj1: ${obj.name} - ${obj.artist} - ${obj.year}<br>
+            obj2: ${obj2.name} - ${obj2.artist} - ${obj2.year}<br>`;
+        }
+
+        // EX 4
+        const arrayDes = ['a', 'b', 'c', 'd', 'e'];
+        const destructuring = () => {
+            let [a, b, ...rest] = arrayDes;
+
+            return `<br> var1: ${a} <br> var2: ${b} <br> var3: ${rest.join(', ')}`;
+        }
+
+        // EX 5
+        const spreadFunc = (a, b, c) => {
+            return a + b + c;
+        }
+
+        // EX 6
+        const song = { name: 'Battlecry', artist: 'Nujabes', year: 2004 }
+        const info = { genre: 'lofi', album: 'Departure' }
+
+        const mergeObj = (s, i) => {
+            let merged = { ...s, ...i }
+
+            return `${merged.name} - ${merged.artist} - ${merged.year} - ${merged.genre} - ${merged.album}`;
+        }
+
+        let arraySpread = [1, 2, 3];
+
         function main() {
             let n1 = Number(document.getElementById('NUM1').value);
             let n2 = Number(document.getElementById('NUM2').value);
             let n3 = Number(document.getElementById('NUM3').value);
-            
+
             document.getElementById('TEXT').innerHTML = `
             <b> ---- LVL1 ----</b> <br>
             EX1: ${(arrayMerge(array1, array2)).join(', ')} <br>
             EX2: ${sumar(n1, n2, n3)} <br>
             <b> ---- LVL2 ----</b> <br>
-            EX3: see console <br>
-            EX4: see console <br>
+            EX3: ${copyObj(obj1)} <br>
+            EX4: ${destructuring()} <br>
             <b> ---- LVL3 ----</b> <br>
-            EX5:  <br>
-            EX6:  <br>
+            EX5: ${arraySpread[0]} + ${arraySpread[1]} + ${arraySpread[2]} = ${spreadFunc(...arraySpread)} <br>
+            EX6: ${mergeObj(song, info)} <br>
             `;
         }
 
