@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 1.6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container" id="PROGRAM">
+        <h1>Array loops</h1>
+        <h4> ---- LVL1 ----<br>EX 1:</h4> forEach, see console
+        <p id="EX1"></p>
+
+        <h4>EX 2:</h4> for-of, see console
+        <p id="EX2"></p>
+
+        <h4>EX 3:</h4> filter
+        <p id="EX3"></p>
+
+        <h4>---- LVL2 ---- <br>EX 4:</h4> for-in
+        <p id="EX4"></p>
+
+        <h4>EX 5:</h4> for-of amb break
+        <p id="EX5"></p>
+
+        <h4>---- LVL3 ---- <br>EX 6:</h4> for-of amb index
+        <p id="EX6"></p>
+
+        <p>
+            <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
+        </p>
+
+    </div>
+
+    <script>
+
+        let noms = ['Anna', 'Bernat', 'Clara'];
+        let numeros = [1, 2, 3, 4, 5, 6];
+        let obj = { nom: 'Ona', edat: 25, ciutat: 'Barcelona' };
+
+        // EX 1
+        function showNames(n) { console.log('Ex1: ' + n); }
+
+        // EX 2
+        function showNames2(n) {
+            for (let x of n) {
+                let text = 'Ex2: ';
+                text += x;
+                console.log(text);
+            }
+        }
+
+        // EX 3
+        const evenNums = (arr) => { return arr.filter(n => n % 2 == 0); }
+
+        // EX 4
+        function showKeys(o) {
+            for (let x in o) {
+                let text = 'Ex4: ';
+                text += o[x];
+                console.log(text);
+            }
+        }
+
+        // EX 5
+
+
+        // EX 6
+
+
+
+        function main() {
+            noms.forEach(showNames);
+            console.log('----------');
+            showNames2(noms);
+            console.log('----------');
+            showKeys(obj);
+
+            document.getElementById('EX1').innerHTML = `see console`;
+            document.getElementById('EX2').innerHTML = `see console`;
+            document.getElementById('EX3').innerHTML = `${evenNums(numeros)}`;
+            document.getElementById('EX4').innerHTML = ``;
+            document.getElementById('EX5').innerHTML = ``;
+            document.getElementById('EX6').innerHTML = ``;
+
+        }
+
+    </script>
+</body>
+
+</html>
