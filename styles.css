@@ -4,19 +4,19 @@
 
     .container {
         position: fixed;
-        top: 10%;
+        top: 1%;
         left: 50%;
         transform: translate(-50%, 0%);
         background-color: rgb(219, 240, 250);
         text-align: center;
-        padding: 2%;
-        width: 350px;
+        width: 500px;
         border: solid 5px blue;
     }
 
     h1 {
         color: blueviolet;
         text-align: center;
+        font-size: x-large;
     }
     h4 {
         color: blue;

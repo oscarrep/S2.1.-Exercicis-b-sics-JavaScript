@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 1.4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container" id="PROGRAM">
+        <h1>Rest & Spread</h1>
+        <h4><b>EX 1</b>:</h4>
+        Array spread
+
+        <h4><b>EX 2</b>:</h4>
+        <p>num1: <input type="number" id="NUM1"></p>
+        <p>num2: <input type="number" id="NUM2"></p>
+        <p>num3: <input type="number" id="NUM3"></p>
+
+        <h4><b>EX 3</b>:</h4>
+        nom: <br><input type="text" id="NOM">
+
+        <h4><b>EX 4</b>:</h4> See console
+
+        <h4><b>EX 5</b>:</h4>
+        string: <br><input type="text" id="STRING">
+
+        <h4><b>EX 6</b>:</h4>
+        string: <br><input type="text" id="STRING">
+
+        <p>
+            <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
+        </p>
+        <p id="TEXT"></p>
+    </div>
+
+    <script>
+
+        // EX 1
+        let array1 = [1, 2, 3, 4, 5, 6];
+        let array2 = [10, 20, 30, 40, 50, 60];
+        const arrayMerge = () => { return [...array1, ...array2]; }
+
+        // EX 2
+        const sumar = (...nums) => {
+            let suma = 0;
+            for (let num of nums) suma += num;
+            return suma;
+        }
+
+        function main() {
+            let n1 = Number(document.getElementById('NUM1').value);
+            let n2 = Number(document.getElementById('NUM2').value);
+            let n3 = Number(document.getElementById('NUM3').value);
+            
+            document.getElementById('TEXT').innerHTML = `
+            <b> ---- LVL1 ----</b> <br>
+            EX1: ${(arrayMerge(array1, array2)).join(', ')} <br>
+            EX2: ${sumar(n1, n2, n3)} <br>
+            <b> ---- LVL2 ----</b> <br>
+            EX3: see console <br>
+            EX4: see console <br>
+            <b> ---- LVL3 ----</b> <br>
+            EX5:  <br>
+            EX6:  <br>
+            `;
+        }
+
+    </script>
+</body>
+
+</html>
