@@ -20,10 +20,10 @@
         <h4>EX 3:</h4> filter
         <p id="EX3"></p>
 
-        <h4>---- LVL2 ---- <br>EX 4:</h4> for-in
+        <h4>---- LVL2 ---- <br>EX 4:</h4> for-in, see console
         <p id="EX4"></p>
 
-        <h4>EX 5:</h4> for-of amb break
+        <h4>EX 5:</h4> for-of amb break, see console
         <p id="EX5"></p>
 
         <h4>---- LVL3 ---- <br>EX 6:</h4> for-of amb index
@@ -66,11 +66,24 @@
         }
 
         // EX 5
-
+        function printTo(arr) {
+            for (let x of arr) {
+                let text = 'Ex5: ';
+                text += x;
+                if (x > 5) break;
+                else console.log(text);
+            }
+        }
 
         // EX 6
-
-
+        function showNames3(n) {
+            for (let x of n) {
+                let text = 'Ex6: ';
+                let i = n.indexOf(x)
+                text += x + ', index: ' + i;
+                console.log(text);
+            }
+        }
 
         function main() {
             noms.forEach(showNames);
@@ -78,9 +91,11 @@
             showNames2(noms);
             console.log('----------');
             showKeys(obj);
+            console.log('----------');
+            printTo(numeros);
+            console.log('----------');
+            showNames3(noms);
 
-            document.getElementById('EX1').innerHTML = `see console`;
-            document.getElementById('EX2').innerHTML = `see console`;
             document.getElementById('EX3').innerHTML = `${evenNums(numeros)}`;
             document.getElementById('EX4').innerHTML = ``;
             document.getElementById('EX5').innerHTML = ``;
