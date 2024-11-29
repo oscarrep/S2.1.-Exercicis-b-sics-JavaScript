@@ -11,22 +11,24 @@
 <body>
     <div class="container" id="PROGRAM">
         <h1>Array loops</h1>
-        <h4> ---- LVL1 ----<br>EX 1:</h4> forEach, see console
+        <h4> ---- LVL1 ----<br>EX 1:</h4> forEach, imprimir cada nom a la consola ['Anna', 'Bernat', 'Clara']
         <p id="EX1"></p>
 
-        <h4>EX 2:</h4> for-of, see console
+        <h4>EX 2:</h4> for-of, imprimir cada nom a la consola
         <p id="EX2"></p>
 
-        <h4>EX 3:</h4> filter
+        <h4>EX 3:</h4> filter, números parells de [1, 2, 3, 4, 5, 6], consola
         <p id="EX3"></p>
 
-        <h4>---- LVL2 ---- <br>EX 4:</h4> for-in, see console
+        <h4>---- LVL2 ---- <br>EX 4:</h4> for-in, mostrar a consola cada clau de obj = { nom: Ona, edat: 25, ciutat:
+        'Barcelona' };
         <p id="EX4"></p>
 
-        <h4>EX 5:</h4> for-of amb break, see console
+        <h4>EX 5:</h4> for-of amb break, imprimir a consola fins trobar 5
         <p id="EX5"></p>
 
-        <h4>---- LVL3 ---- <br>EX 6:</h4> for-of amb index
+        <h4>---- LVL3 ---- <br>EX 6:</h4> for-of amb index, imprimir a consola elements + index de ['Anna', 'Bernat',
+        'Clara']
         <p id="EX6"></p>
 
         <p>
@@ -54,7 +56,7 @@
         }
 
         // EX 3
-        const evenNums = (arr) => { return arr.filter(n => n % 2 == 0); }
+        const evenNums = (arr) => { console.log('Ex3: ' + arr.filter(n => n % 2 == 0)); }
 
         // EX 4
         function showKeys(o) {
@@ -90,16 +92,13 @@
             console.log('----------');
             showNames2(noms);
             console.log('----------');
+            evenNums(numeros)
+            console.log('----------');
             showKeys(obj);
             console.log('----------');
             printTo(numeros);
             console.log('----------');
             showNames3(noms);
-
-            document.getElementById('EX3').innerHTML = `${evenNums(numeros)}`;
-            document.getElementById('EX4').innerHTML = ``;
-            document.getElementById('EX5').innerHTML = ``;
-            document.getElementById('EX6').innerHTML = ``;
 
         }
 

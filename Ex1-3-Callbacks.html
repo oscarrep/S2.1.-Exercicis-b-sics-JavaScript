@@ -11,20 +11,20 @@
 <body>
     <div class="container" id="PROGRAM">
         <h1>Callbacks</h1>
-        <h4>EX 1:</h4>
-        <p>num: <br><input type="number" id="NUM"></p>
+        <h4>LVL1 EX 1:</h4> Callback bàsic
+        <p>num: <input type="number" id="NUM"></p>
 
-        <h4>EX 2:</h4>
-        <p>num1: <br><input type="number" id="NUM1"></p>
-        <p>num2: <br><input type="number" id="NUM2"></p>
+        <h4>EX 2:</h4> Callbacks amb operacions matemàtiques
+        <p>num1: <input type="number" id="NUM1"></p>
+        <p>num2: <input type="number" id="NUM2"></p>
 
-        <h4>EX 3:</h4>
-        <p>nom: <br><input type="text" id="NOM"></p>
+        <h4>LVL2 EX 3:</h4> Ús de callbacks en funcions asíncrones. Veure Consola
+        <p>nom: <input type="text" id="NOM"></p>
         
-        <h4>EX 4:</h4> See console
+        <h4>EX 4:</h4> Callbacks amb arrays. Veure consola
         
-        <h4>EX 5:</h4>
-        <p>string: <br><input type="text" id="STRING"></p>
+        <h4>LVL5 EX 5:</h4> Callbacks amb strings
+        <p>string: <input type="text" id="STRING"></p>
 
         <p>
             <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
@@ -45,7 +45,7 @@
         // EX 3
         let timeout = 0;
         const espararSaludar = (nom, callback) => { return timeout = setTimeout(() => callback(nom), 2000); }
-        const saludar = (n) => { return console.log('hola, ' + n); }
+        const saludar = (n) => { return console.log('EX 3: hola, ' + n); }
 
         // EX 4
         let shortArray = [0, 1, 2, 3, 4, 5];
@@ -54,7 +54,7 @@
                 callback(array, i);
             }
         }
-        const mostrarArray = (arr, n) => { console.log(arr[n]); }
+        const mostrarArray = (arr, n) => { console.log('EX 4: '+arr[n]); }
 
         // EX 5
         const processarCadena = (string, callback) => {

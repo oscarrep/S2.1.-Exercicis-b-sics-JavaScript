@@ -11,22 +11,22 @@
 <body>
     <div class="container" id="PROGRAM">
         <h1>Array transformations</h1>
-        <h4> ---- LVL1 ----<br>EX 1:</h4> Map
+        <h4> ---- LVL1 ----<br>EX 1:</h4> Map. quadrat de cada número
         <p id="EX1"></p>
 
-        <h4>EX 2:</h4> Filter
+        <h4>EX 2:</h4> Filter. números parells
         <p id="EX2"></p>
 
-        <h4>EX 3:</h4> Find
+        <h4>EX 3:</h4> Find. primer número que és major a 10
         <p id="EX3"></p>
 
-        <h4>EX 4:</h4> Reduce
+        <h4>EX 4:</h4> Reduce. total dels números
         <p id="EX4"></p>
 
-        <h4>---- LVL2 ---- <br>EX 5:</h4> Filter, multiply, add
+        <h4>---- LVL2 ---- <br>EX 5:</h4> Filter, multiply, add. Filtra per n >= 10, mult 2, suma total
         <p id="EX5"></p>
 
-        <h4>---- LVL3 ---- <br>EX 6:</h4> Every / Some
+        <h4>---- LVL3 ---- <br>EX 6:</h4> Every / Some. mostra si n >= 10
         <p id="EX6"></p>
 
         <p>
@@ -43,7 +43,7 @@
         // EX 1
         const square = (arr) => {
             for (let i = 0; i < arr.length; i++) {
-                powArray = arr.map(n=> Math.pow(n,2));
+                powArray = arr.map(n => Math.pow(n, 2));
             }
             return powArray;
         }

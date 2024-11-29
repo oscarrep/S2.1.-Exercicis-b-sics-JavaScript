@@ -11,26 +11,30 @@
 <body>
     <div class="container" id="PROGRAM">
         <h1>Rest & Spread</h1>
-        <h4>EX 1:</h4>
-        Operador Spread en Arrays
+        <h4>LVL1 EX 1:</h4>
+        <p>Operador Spread en Arrays. Combinar 2 arrays</p>
+        <p id="EX1"></p>
 
-        <h4>EX 2:</h4> Operador Rest en Funcions
-        <p>num1: <input type="number" id="NUM1"></p>
-        <p>num2: <input type="number" id="NUM2"></p>
-        <p>num3: <input type="number" id="NUM3"></p>
+        <h4>EX 2:</h4> <p>Operador Rest en Funcions. Suma de nums</p>
+        <p>n1: <input type="number" id="NUM1"> n2: <input type="number" id="NUM2"> n3: <input type="number" id="NUM3"></p>
+        <p id="EX2"></p>
 
-        <h4>EX 3:</h4> Copiant objectes amb Spread
+        <h4>LVL2 EX 3:</h4> <p>Copiant objectes amb Spread. Copia obj i canvia propietats</p>
+        <p id="EX3"></p>
 
-        <h4>EX 4:</h4> Rest en Destructuring
+        <h4>EX 4:</h4> <p>Rest en Destructuring. Assignar elements d'un array a varies variables</p>
+        <p id="EX4"></p>
 
-        <h4>EX 5:</h4> Spread en Funcions
+        <h4>LVL3 EX 5:</h4> <p>Spread en Funcions. Funció rep tres args. Array amb tres elements, crida funció amb spread i array</p>
+        <p id="EX5"></p>
 
-        <h4>EX 6:</h4> Fusionant Objectes amb Spread:
+        <h4>EX 6:</h4> <p>Fusionant Objectes amb Spread. Fusionar 2 obj</p>
+        <p id="EX6"></p>
 
         <p>
             <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
         </p>
-        <p id="TEXT"></p>
+        <p id="TEXT" class="mText"></p>
     </div>
 
     <script>
@@ -54,9 +58,9 @@
             let obj2 = { ...obj }
 
             obj2.name = 'Pills';
-            return `<br>
-            obj1: ${obj.name} - ${obj.artist} - ${obj.year}<br>
-            obj2: ${obj2.name} - ${obj2.artist} - ${obj2.year}<br>`;
+            return `
+            obj1: ${obj.name} - ${obj.artist} - ${obj.year}, 
+            obj2: ${obj2.name} - ${obj2.artist} - ${obj2.year}`;
         }
 
         // EX 4
@@ -64,7 +68,7 @@
         const destructuring = () => {
             let [a, b, ...rest] = arrayDes;
 
-            return `<br> var1: ${a} <br> var2: ${b} <br> var3: ${rest.join(', ')}`;
+            return `var1: ${a} - var2: ${b} - var3: ${rest.join(', ')}`;
         }
 
         // EX 5
@@ -90,15 +94,12 @@
             let n3 = Number(document.getElementById('NUM3').value);
 
             document.getElementById('TEXT').innerHTML = `
-            <b> ---- LVL1 ----</b> <br>
-            EX1: ${(arrayMerge(array1, array2)).join(', ')} <br>
-            EX2: ${sumar(n1, n2, n3)} <br>
-            <b> ---- LVL2 ----</b> <br>
-            EX3: ${copyObj(obj1)} <br>
-            EX4: ${destructuring()} <br>
-            <b> ---- LVL3 ----</b> <br>
-            EX5: ${arraySpread[0]} + ${arraySpread[1]} + ${arraySpread[2]} = ${spreadFunc(...arraySpread)} <br>
-            EX6: ${mergeObj(song, info)} <br>
+            -- EX1: ${(arrayMerge(array1, array2)).join(', ')} <br>
+            -- EX2: ${sumar(n1, n2, n3)} <br>
+            -- EX3: ${copyObj(obj1)} <br>
+            -- EX4: ${destructuring()} <br>
+            -- EX5: ${arraySpread[0]} + ${arraySpread[1]} + ${arraySpread[2]} = ${spreadFunc(...arraySpread)} <br>
+            -- EX6: ${mergeObj(song, info)} <br>
             `;
         }
 

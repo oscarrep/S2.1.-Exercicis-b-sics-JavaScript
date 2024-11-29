@@ -9,7 +9,7 @@
         transform: translate(-50%, 0%);
         background-color: rgb(219, 240, 250);
         text-align: center;
-        width: 500px;
+        width: 750px;
         border: solid 5px blue;
     }
 
@@ -24,6 +24,10 @@
         text-align: center;
     }
 
+    p {
+        margin-bottom: 2px;
+    }
+
     span {
         color: red;
     }
@@ -33,5 +37,11 @@
     }
 
     .mButton {
-        width: 45%;
+        width: 20%;
+    }
+
+    .mText {
+        text-align: justify;
+        margin-left: 20%;
+        margin-bottom: 5%;
     }

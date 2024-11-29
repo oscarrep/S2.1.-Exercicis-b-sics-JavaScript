@@ -11,14 +11,21 @@
 <body>
     <div class="container" id="PROGRAM">
         <h1>Arrow Functions</h1>
-        <h4>EX 1:</h4>
+        <h4>LVL1 EX 1:</h4> Conversió de funcions
         <p>numero 1 <br><input type="number" id="A"></p>
         <p>numero 2 <br><input type="number" id="B"></p>
 
-        <h4>EX 2: <br>Random num 0-100</h4>
+        <h4>EX 2:</h4> Funció de fletxa sense paràmetres <br>Random num 0-100
 
-        <h4>EX 3:</h4>
-        <p>Nom de persona <br><input type="text" id="NAME"></p>
+        <h4>EX 3:</h4> Ús de 'this' en les funcions de fletxa
+        <p>Nom de persona <input type="text" id="NAME"></p>
+
+        <h4>LVL2 EX 4:</h4> Funció de fletxa dins d'un loop
+        <P>Consola</P>
+
+        <h4>LVL3 EX 5:</h4> Funció de fletxa amb 'setTimeout'
+        <p>Consola</p>
+
 
         <p>
             <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
@@ -67,13 +74,10 @@
             createPerson();
 
             document.getElementById('TEXT').innerHTML = `
-            <b>--- LVL1 ---</b> <br>
             Ex1: ${Add(a, b)} <br> 
             Ex2 Random Num: ${randomNum()} <br>
             Ex3: ${personArray[index].salute()} <br>
-            <b>--- LVL2 ---</b> <br>
             Ex4: See in console <br>
-            <b>--- LVL3 ---</b> <br>
             Ex5: See in console<br>`;
             printNumbers(shortArray);
             waitTime();
