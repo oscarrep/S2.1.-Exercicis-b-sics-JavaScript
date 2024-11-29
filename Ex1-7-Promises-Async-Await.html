@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 1.6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container" id="PROGRAM">
+        <h1>Array loops</h1>
+        <h4> ---- LVL1 ----<br>EX 1:</h4> Creació d'una Promesa. Hello world després de 2s
+        <p id="EX1"></p>
+
+        <h4>EX 2:</h4> Utilització d'una Promesa. .then que imprimeixi el resultat
+        <p id="EX2"></p>
+
+        <h4>EX 3:</h4> Reject. Resol en 2s si input = 'Hola', rebutja si != 'Hola'
+        <p><input type="text" id="hola"></p>
+        <p id="EX3"></p>
+
+        <h4>EX 4:</h4> Ús de async/await
+        <p id="EX4"></p>
+
+        <h4>---- LVL2 ---- <br>EX 5:</h4> Gestió d'errors amb async/await
+        <p id="EX5"></p>
+
+        <h4>---- LVL3 ---- <br>EX 6:</h4> Promise.all
+        <p id="EX6"></p>
+
+        <p>
+            <button class="mButton" id="BOARD" onclick="main()">RESULTS</button>
+        </p>
+
+
+    </div>
+
+    <script>
+
+        // EX 5
+
+
+        // EX 6
+
+
+        function main() {
+
+
+            // EX 1
+            const promise1 = new Promise(function (saludar) {
+                setTimeout(function () { saludar('Hello, world!'); }, 2000);
+            });
+
+            // EX 2
+            promise1.then(function (text) {
+                console.log('EX2: ' + text);
+                document.getElementById('EX1').innerHTML = text;
+                document.getElementById('EX2').innerHTML = text;
+            })
+
+            // EX 3
+            let input = document.getElementById('hola').value;
+
+            const promise2 = new Promise(function (answer, reject) {
+                setTimeout(function () {
+                    if (input == 'Hola') answer('Hello!');
+                    else reject('Escriu Hola.');
+                }, 2000);
+            });
+
+            promise2.then(
+                function (text) { document.getElementById('EX3').innerHTML = text; },
+                function (error) { document.getElementById('EX3').innerHTML = `<span>${error}</span>`; }
+            );
+
+            // EX 4
+            async function show() {
+                document.getElementById('EX4').innerHTML = await promise1;
+                console.log('EX4: ' + await promise1);
+            }
+            show();
+
+            // EX 5
+            async function show2() {
+                try {
+                    document.getElementById('EX5').innerHTML = await promise1;
+                    console.log('EX5: ' + await promise1);
+                }
+                catch {
+                    document.getElementById('EX5').innerHTML = `<span>ERROR</span>`;
+                    console.log('EX5 ERROR');
+                }
+            }
+            show2();
+
+
+            // EX 6
+            const promise3 = new Promise(function (saludar) {
+                setTimeout(function () { saludar('HELLO'); }, 2000);
+            });
+
+            const promise4 = new Promise(function (saludar) {
+                setTimeout(function () { saludar(' WORLD!'); }, 3000);
+            });
+
+            function showE6(text) {
+                document.getElementById('EX6').innerHTML = text;
+                console.log('EX6: ' + text);
+            }
+
+            Promise.all([promise3, promise4]).then((x) => {
+                showE6(x);
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>
